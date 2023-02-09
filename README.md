@@ -1,5 +1,5 @@
 # 🍰･:*:･ﾟ cs103aSpr23TeamProjects ｡･:*:･ 🍰 #
-cs103 team repo
+cs103 team repo!
 
 team:
 * yalda 
