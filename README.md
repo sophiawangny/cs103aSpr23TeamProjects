@@ -1,2 +1,4 @@
-# cs103aSpr23TeamProjects
+# 🍰･:*:･ﾟ cs103aSpr23TeamProjects ｡･:*:･ 🍰
 cs103 team repo
+
+
