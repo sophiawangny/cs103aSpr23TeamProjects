@@ -2,9 +2,9 @@
 cs103 team repo!
 
 team:
-* yalda 
-* sophia
-* kyra
+* yalda yaldamauj@brandeis.edu
+* sophia sophiaw@brandeis.edu
+* kyra kyrarivest@brandeis.edu
 * omar
 * areen
 
