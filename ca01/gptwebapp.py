@@ -34,10 +34,13 @@ def index():
     print('processing / route')
     return f'''
     <ul> 
-    <li> <a href="{url_for('about')}">what our program does</a>  </li>
         
-        <li>   <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a> </li>
+        <li>   
+        <h1>GPT Demo</h1>
+        <a href="{url_for('gptdemo')}">Ask questions to GPT</a> 
+        </li>
+
+         <li> <a href="{url_for('about')}">what our program does</a>  </li>
 
     </ul>
     '''
