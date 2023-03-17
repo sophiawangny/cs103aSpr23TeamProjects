@@ -33,8 +33,13 @@ def index():
     ''' display a link to the general query page '''
     print('processing / route')
     return f'''
-        <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+    <ul>
+          <li> <h1>GPT Demo</h1>
+        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>   </li>
+        <li> <a href="{url_for('gptomar')}">Omar GPT</a>     </li>
+        <li> <a href="{url_for('about')}">what our program does</a>  </li>
+  </ul>
+     
     '''
 
 
@@ -60,6 +65,44 @@ def gptdemo():
         return '''
         <h1>GPT Demo App</h1>
         Enter your query below
+        <form method="post">
+            <textarea name="prompt"></textarea>
+            <p><input type=submit value="get response">
+        </form>
+        '''
+
+
+@app.route('/about')
+def about():
+    '''about page'''
+    return f'''
+    <h1> About </h1>
+    <p> Our program lets you submit a prompt and get an answer. we also have specific questions from yalda, areen, sophia, and omar!</p>
+
+    '''
+
+@app.route('/gptomar', methods=['GET', 'POST'])
+def gptomar():
+    ''' handle a get request by sending a form 
+        and a post request by returning the GPT response
+    '''
+    if request.method == 'POST':
+        prompt = request.form['prompt']
+        answer = gptAPI.getResponse(prompt)
+        return f'''
+        <h1>GPT Demo</h1>
+        <pre style="bgcolor:yellow">{prompt}</pre>
+        <hr>
+        Here is the answer in text mode:
+        <div style="border:thin solid black">{answer}</div>
+        Here is the answer in "pre" mode:
+        <pre style="border:thin solid black">{answer}</pre>
+        <a href={url_for('gptdemo')}> make another query</a>
+        '''
+    else:
+        return '''
+        <h1>GPT Demo App</h1>
+        How many sides does a ..... have?
         <form method="post">
             <textarea name="prompt"></textarea>
             <p><input type=submit value="get response">
