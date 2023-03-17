@@ -33,8 +33,13 @@ def index():
     ''' display a link to the general query page '''
     print('processing / route')
     return f'''
-        <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+    <ul> 
+    <li> <a href="{url_for('about')}">what our program does</a>  </li>
+        
+        <li>   <h1>GPT Demo</h1>
+        <a href="{url_for('gptdemo')}">Ask questions to GPT</a> </li>
+
+    </ul>
     '''
 
 
@@ -65,6 +70,19 @@ def gptdemo():
             <p><input type=submit value="get response">
         </form>
         '''
+    
+
+@app.route('/about')
+def about():
+    ''' about page '''
+    return f'''
+   
+        <h1> About </h1>
+        <p> Our program lets you submit </p>
+    '''
+
+
+
 
 if __name__=='__main__':
     # run the code on port 5001, MacOS uses port 5000 for its own service :(
