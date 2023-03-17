@@ -49,6 +49,9 @@ class GPT():
        return self.getResponse(prompt)
     '''sophia'''
     
+    def yalda(self):
+        prompt = f"What is the capital of Afghanistan?"
+        return self.getResponse(prompt)
 
 if __name__=='__main__':
     '''
@@ -57,6 +60,9 @@ if __name__=='__main__':
     g = GPT(os.environ.get("APIKEY"))
     sophiasprompt = g.sophia()
     print(sophiasprompt)
+
+    yaldasprompt = g.yalda()
+    print(yaldasprompt)
 
 
 
