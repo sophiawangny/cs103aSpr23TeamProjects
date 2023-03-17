@@ -188,7 +188,6 @@ def gptsophia():
         <h1>GPT Demo</h1>
         <pre style="bgcolor:yellow">{prompt}</pre>
         <hr>
-        Here is the answer in text mode:
         <div style="border:thin solid black">{answer}</div>
         <a href={url_for('gptdemo')}> make another query</a>
         '''
