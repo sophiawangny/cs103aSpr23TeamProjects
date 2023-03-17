@@ -74,7 +74,17 @@ def gptdemo():
         </form>
         '''
 
-
+@app.route('/team')
+def team():
+    return '''
+    <h1>Team Members</h1>
+    <ul>
+        <li><strong>Areen:</strong> Class of 2025, Computer Science and Physics</li>
+        <li><strong>Omar:</strong> Class of 2023, Computer Science</li>
+        <li><strong>Yalda:</strong> Class of 2023, Computer Science and Economics</li>
+        <li><strong>Sophia:</strong> Class of 2023, Computer Science and Studio Arts</li>
+    </ul>
+    '''
 
 @app.route('/about')
 def about():
