@@ -58,6 +58,10 @@ class GPT():
         prompt = f"What is the capital of {country}?"
         return self.getResponse(prompt)
 
+    def omar(self, country):
+        prompt = f"How many sides does a {country} have?"
+        return self.getResponse(prompt)
+
 if __name__=='__main__':
     '''
     '''
