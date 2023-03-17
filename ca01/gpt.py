@@ -45,7 +45,7 @@ class GPT():
         return response
  
     def areen(self):
-        prompt = "what is the number of states in the U.S?"
+        prompt = "what is the number town in {country}?"
         return self.getResponse(prompt)
     '''areen'''
 
