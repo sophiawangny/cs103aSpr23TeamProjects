@@ -132,16 +132,16 @@ def gptomar():
     '''
     if request.method == 'POST':
         prompt = request.form['prompt']
-        answer = gptAPI.getResponse(prompt)
+        answer = gptAPI.omar(prompt)
         return f'''
-        <h1>GPT Demo</h1>
+        <h1>Omar GPT</h1>
         <pre style="bgcolor:yellow">{prompt}</pre>
         <hr>
         Here is the answer in text mode:
         <div style="border:thin solid black">{answer}</div>
         Here is the answer in "pre" mode:
         <pre style="border:thin solid black">{answer}</pre>
-        <a href={url_for('gptdemo')}> make another query</a>
+        <a href={url_for('gptomar')}> make another query</a>
         '''
     else:
         return '''
