@@ -19,7 +19,6 @@ On Windows:
 '''
 import openai
 
-
 class GPT():
     ''' make queries to gpt from a given API '''
     def __init__(self,apikey):
@@ -44,10 +43,32 @@ class GPT():
 
         response = completion.choices[0].text
         return response
+ 
+    def areen(self):
+        prompt = "what is the number of states in the U.S?"
+        return self.getResponse(prompt)
+    '''areen'''
+
+    def sophia(self):
+       prompt = "what is the most common cat breed?"
+       return self.getResponse(prompt)
+    '''sophia'''
+    
+    def yalda(self):
+        prompt = f"What is the capital of Afghanistan?"
+        return self.getResponse(prompt)
 
 if __name__=='__main__':
     '''
     '''
     import os
     g = GPT(os.environ.get("APIKEY"))
-    print(g.getResponse("what does openai's GPT stand for?"))
+    sophiasprompt = g.sophia()
+    print(sophiasprompt)
+
+    yaldasprompt = g.yalda()
+    print(yaldasprompt)
+
+
+
+

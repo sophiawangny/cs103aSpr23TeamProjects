@@ -33,6 +33,7 @@ def index():
     ''' display a link to the general query page '''
     print('processing / route')
     return f'''
+<<<<<<< HEAD
     <ul>
           <li> <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>   </li>
@@ -40,6 +41,18 @@ def index():
         <li> <a href="{url_for('about')}">what our program does</a>  </li>
   </ul>
      
+=======
+    <ul> 
+        
+        <li>   
+        <h1>GPT Demo</h1>
+        <a href="{url_for('gptdemo')}">Ask questions to GPT</a> 
+        </li>
+
+         <li> <a href="{url_for('about')}">what our program does</a>  </li>
+
+    </ul>
+>>>>>>> 3c384a9bd89807adf6aa30cd22dd70e3dd113903
     '''
 
 
@@ -70,6 +83,19 @@ def gptdemo():
             <p><input type=submit value="get response">
         </form>
         '''
+    
+
+@app.route('/about')
+def about():
+    ''' about page '''
+    return f'''
+   
+        <h1> About </h1>
+        <p> Our program lets you submit </p>
+    '''
+
+
+
 
 
 @app.route('/about')
