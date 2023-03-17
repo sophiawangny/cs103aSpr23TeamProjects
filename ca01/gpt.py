@@ -43,7 +43,12 @@ class GPT():
 
         response = completion.choices[0].text
         return response
-    
+ 
+    def areen(self):
+        prompt = "what is the number of states in the U.S?"
+        return self.getResponse(prompt)
+    '''areen'''
+
     def sophia(self):
        prompt = "what is the most common cat breed?"
        return self.getResponse(prompt)
