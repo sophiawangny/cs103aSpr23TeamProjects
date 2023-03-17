@@ -45,12 +45,12 @@ class GPT():
         return response
  
     def areen(self):
-        prompt = "what is the number of states in the U.S?"
+        prompt = "what is the number town in {country}?"
         return self.getResponse(prompt)
     '''areen'''
 
-    def sophia(self):
-       prompt = "what is the most common cat breed?"
+    def sophia(self, animal):
+       prompt = f"Can a {animal} cry?  "
        return self.getResponse(prompt)
     '''sophia'''
     
@@ -58,8 +58,8 @@ class GPT():
         prompt = f"What is the capital of {country}?"
         return self.getResponse(prompt)
 
-    def omar(self, country):
-        prompt = f"How many sides does a {country} have?"
+    def omar(self, shape):
+        prompt = f"How many sides does a {shape} have?"
         return self.getResponse(prompt)
 
 if __name__=='__main__':

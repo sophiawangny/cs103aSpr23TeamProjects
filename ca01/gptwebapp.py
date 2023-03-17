@@ -41,6 +41,7 @@ def index():
         <li> <a href="{url_for('team')}">Team Member</a>  </li>
         <li> <a href="{url_for('gptomar')}">Omar GPT</a>     </li>
         <li> <a href="{url_for('gptyalda')}">Yalda GPT</a>     </li>
+           <li> <a href="{url_for('gptsophia')}">Sophia GPT</a>     </li>
 
   </ul>
 
@@ -142,6 +143,35 @@ def gptyalda():
         return '''
         <h1>GPT Demo App</h1>
         What is the capital of ...?
+        <form method="post">
+            <textarea name="prompt"></textarea>
+            <p><input type=submit value="get response">
+        </form>
+        '''
+    
+
+@app.route('/gptsophia', methods=['GET', 'POST'])
+def gptsophia():
+    ''' handle a get request by sending a form 
+        and a post request by returning the GPT response
+    '''
+    if request.method == 'POST':
+        prompt = request.form['prompt']
+        answer = gptAPI.sophia(prompt)
+        return f'''
+        <h1>GPT Demo</h1>
+        <pre style="bgcolor:yellow">{prompt}</pre>
+        <hr>
+        Here is the answer in text mode:
+        <div style="border:thin solid black">{answer}</div>
+        Here is the answer in "pre" mode:
+        <pre style="border:thin solid black">{answer}</pre>
+        <a href={url_for('gptdemo')}> make another query</a>
+        '''
+    else:
+        return '''
+        <h1>GPT Demo App</h1>
+        can a {insert animal} cry ...?
         <form method="post">
             <textarea name="prompt"></textarea>
             <p><input type=submit value="get response">
