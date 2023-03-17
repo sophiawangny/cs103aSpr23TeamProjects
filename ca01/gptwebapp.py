@@ -83,19 +83,6 @@ def gptdemo():
             <p><input type=submit value="get response">
         </form>
         '''
-    
-
-@app.route('/about')
-def about():
-    ''' about page '''
-    return f'''
-   
-        <h1> About </h1>
-        <p> Our program lets you submit </p>
-    '''
-
-
-
 
 
 @app.route('/about')

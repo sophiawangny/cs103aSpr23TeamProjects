@@ -54,8 +54,8 @@ class GPT():
        return self.getResponse(prompt)
     '''sophia'''
     
-    def yalda(self):
-        prompt = f"What is the capital of Afghanistan?"
+    def yalda(self, country):
+        prompt = f"What is the capital of {country}?"
         return self.getResponse(prompt)
 
 if __name__=='__main__':
