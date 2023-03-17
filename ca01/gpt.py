@@ -44,8 +44,8 @@ class GPT():
         response = completion.choices[0].text
         return response
  
-    def areen(self):
-        prompt = "what is the number town in {country}?"
+    def areen(self, country):
+        prompt = f"what is the number town in {country}?"
         return self.getResponse(prompt)
     '''areen'''
 
