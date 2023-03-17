@@ -37,8 +37,8 @@ def index():
     <ul>
           <li> <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>   </li>
-        <li> <a href="{url_for('team')}">Team Member</a>  </li>
         <li> <a href="{url_for('about')}">What our program does?</a>  </li>
+        <li> <a href="{url_for('team')}">Team Member</a>  </li>
         <li> <a href="{url_for('gptomar')}">Omar GPT</a>     </li>
         <li> <a href="{url_for('gptyalda')}">Yalda GPT</a>     </li>
 
@@ -92,7 +92,7 @@ def about():
     '''about page'''
     return f'''
     <h1> About </h1>
-    <p> Our program lets you submit a prompt and get an answer. we also have specific questions from yalda, areen, sophia, and omar!</p>
+    <p> Our program is a web ap using Flask which uses prompt engineering to generate useful responses specific questions from from Yalda, Areen, Sophia, and Omar!</p>
 
     '''
 
@@ -133,12 +133,8 @@ def gptyalda():
         prompt = request.form['prompt']
         answer = gptAPI.yalda(prompt)
         return f'''
-        <h1>GPT Demo</h1>
-        <pre style="bgcolor:yellow">{prompt}</pre>
+        <h1>Yalda's method</h1>
         <hr>
-        Here is the answer in text mode:
-        <div style="border:thin solid black">{answer}</div>
-        Here is the answer in "pre" mode:
         <pre style="border:thin solid black">{answer}</pre>
         <a href={url_for('gptdemo')}> make another query</a>
         '''
