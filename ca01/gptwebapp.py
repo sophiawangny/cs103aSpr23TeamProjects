@@ -37,7 +37,8 @@ def index():
     <ul>
           <li> <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>   </li>
-        <li> <a href="{url_for('about')}">what our program does</a>  </li>
+        <li> <a href="{url_for('team')}">Team Member</a>  </li>
+        <li> <a href="{url_for('about')}">What our program does?</a>  </li>
         <li> <a href="{url_for('gptomar')}">Omar GPT</a>     </li>
         <li> <a href="{url_for('gptyalda')}">Yalda GPT</a>     </li>
 
