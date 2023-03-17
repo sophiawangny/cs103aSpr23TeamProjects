@@ -139,8 +139,6 @@ def gptomar():
         <hr>
         Here is the answer in text mode:
         <div style="border:thin solid black">{answer}</div>
-        Here is the answer in "pre" mode:
-        <pre style="border:thin solid black">{answer}</pre>
         <a href={url_for('gptomar')}> make another query</a>
         '''
     else:
