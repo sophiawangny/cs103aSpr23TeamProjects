@@ -37,8 +37,8 @@ def index():
     <ul>
           <li> <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>   </li>
-        <li> <a href="{url_for('about')}">What our program does?</a>  </li>
-        <li> <a href="{url_for('team')}">Team Member</a>  </li>
+        <li> <a href="{url_for('about')}">About</a>  </li>
+        <li> <a href="{url_for('team')}">Team Members</a>  </li>
         <li> <a href="{url_for('gptomar')}">Omar GPT</a>     </li>
         <li> <a href="{url_for('gptyalda')}">Yalda GPT</a>     </li>
         <li> <a href="{url_for('gptsophia')}">Sophia GPT</a>     </li>
@@ -95,7 +95,7 @@ def about():
     '''about page'''
     return f'''
     <h1> About </h1>
-    <p> Our program is a web ap using Flask which uses prompt engineering to generate useful responses specific questions from from Yalda, Areen, Sophia, and Omar!</p>
+    <p> Our program is a web app using Flask which uses prompt engineering to generate useful responses to specific questions from from Yalda, Areen, Sophia, and Omar! You can also ask questions to GPT as well.</p>
 
     '''
 @app.route('/gptareen', methods=['GET', 'POST'])
@@ -113,7 +113,9 @@ def gptareen():
         Here is the answer in text mode:
         <div style="border:thin solid black">{answer}</div>
 
-        <a href={url_for('gptdemo')}> make another query</a>
+        <a href={url_for('index')}> back to home</a>
+         <a href={url_for('gptareen')}> ask AreenGPT again</a>
+        <a href={url_for('gptdemo')}> ask GPT</a>
         '''
     else:
         return '''
@@ -139,7 +141,11 @@ def gptomar():
         <hr>
         Here is the answer in text mode:
         <div style="border:thin solid black">{answer}</div>
-        <a href={url_for('gptomar')}> make another query</a>
+
+         <a href={url_for('index')}> back to home</a>
+         <a href={url_for('gptomar')}> ask OmarGPT again</a>
+        <a href={url_for('gptdemo')}> ask GPT</a>
+
         '''
     else:
         return '''
@@ -163,7 +169,11 @@ def gptyalda():
         <h1>Yalda's method</h1>
         <hr>
         <pre style="border:thin solid black">{answer}</pre>
-        <a href={url_for('gptdemo')}> make another query</a>
+
+        <a href={url_for('index')}> back to home</a>
+         <a href={url_for('gptyalda')}> ask yaldaGPT again</a>
+        <a href={url_for('gptdemo')}> ask GPT</a>
+
         '''
     else:
         return '''
@@ -182,21 +192,24 @@ def gptsophia():
         and a post request by returning the GPT response
     '''
     if request.method == 'POST':
-        prompt = request.form['prompt']
-        answer = gptAPI.sophia(prompt)
+        animal = request.form['animal']
+        answer = gptAPI.sophia(animal)
         return f'''
         <h1>GPT Demo</h1>
-        <pre style="bgcolor:yellow">{prompt}</pre>
+        <pre style="bgcolor:yellow">{"Can a " + str(animal) + " cry?"}</pre>
         <hr>
         <div style="border:thin solid black">{answer}</div>
-        <a href={url_for('gptdemo')}> make another query</a>
+  
+        <a href={url_for('index')}> back to home</a>
+         <a href={url_for('gptsophia')}> ask sophiaGPT again</a>
+        <a href={url_for('gptdemo')}> ask GPT</a>
         '''
     else:
         return '''
         <h1>GPT Demo App</h1>
-        can a {insert animal} cry ...?
+        can a {insert animal} cry?
         <form method="post">
-            <textarea name="prompt"></textarea>
+            <textarea name="animal"></textarea>
             <p><input type=submit value="get response">
         </form>
         '''

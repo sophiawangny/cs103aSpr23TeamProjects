@@ -67,6 +67,8 @@ if __name__=='__main__':
     '''
     import os
     g = GPT(os.environ.get("APIKEY"))
+
+    '''test'''
     sophiasprompt = g.sophia()
     print(sophiasprompt)
 
