@@ -5,6 +5,6 @@ team:
 * yalda yaldamauj@brandeis.edu
 * sophia sophiaw@brandeis.edu
 * omar
-* areen
+* areen areenkh@brandeis.edu
 
 
