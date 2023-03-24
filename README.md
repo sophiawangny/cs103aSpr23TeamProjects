@@ -4,7 +4,7 @@ cs103 team repo!
 team:
 * yalda yaldamauj@brandeis.edu
 * sophia sophiaw@brandeis.edu
-* omar
+* omar oabuhamdeh@brandeis.edu
 * areen areenkh@brandeis.edu
 
 
